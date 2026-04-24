@@ -1,0 +1,252 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AllocationType {
+  assignedBy: UserType
+  assignedById: ID
+  createdAt: DateTime!
+  id: ID!
+  isActive: Boolean!
+  percentage: Float!
+  project: ProjectType
+  projectId: ID!
+  user: UserType
+  userId: ID!
+}
+
+type AuthPayload {
+  token: String!
+  user: UserType!
+}
+
+input CreateAllocationInput {
+  percentage: Float!
+  projectId: ID!
+  userId: ID!
+}
+
+input CreateProjectInput {
+  code: String!
+  description: String
+  name: String!
+}
+
+input CreateUserInput {
+  city: String
+  country: String
+  department: Department!
+  email: String!
+  name: String!
+  password: String!
+  position: String!
+  reviewerId: ID
+  role: Role
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DayEntryInput {
+  fixedCategoryId: ID
+  hours: Float!
+  note: String
+  projectId: ID
+}
+
+enum Department {
+  ENGINEERING
+  EXPERIENCE
+}
+
+type FixedCategoryType {
+  code: String!
+  id: ID!
+  isActive: Boolean!
+  name: String!
+}
+
+type LoeEntryType {
+  date: DateTime!
+  fixedCategory: FixedCategoryType
+  hours: Float!
+  id: ID!
+  loeSheetId: String!
+  note: String
+  project: ProjectType
+}
+
+type LoeSheetSummaryType {
+  approvedAt: DateTime
+  id: ID!
+  isDelayed: Boolean!
+  month: Int!
+  reviewer: UserType
+  status: LoeStatus!
+  submittedAt: DateTime
+  totalHours: Float!
+  user: UserType!
+  utilizationPercent: Float!
+  year: Int!
+}
+
+type LoeSheetType {
+  approvedAt: DateTime
+  entries: [LoeEntryType!]
+  id: ID!
+  isDelayed: Boolean!
+  markedDelayedAt: DateTime
+  month: Int!
+  reopenComment: String
+  reviewer: UserType
+  reviewerId: String
+  status: LoeStatus!
+  submittedAt: DateTime
+  totalHours: Float!
+  user: UserType
+  userId: String!
+  utilizationPercent: Float!
+  year: Int!
+}
+
+enum LoeStatus {
+  APPROVED
+  DRAFT
+  REOPENED
+  SUBMITTED
+}
+
+type Mutation {
+  approveLoe(loeSheetId: ID!): LoeSheetType!
+  createAllocation(input: CreateAllocationInput!): AllocationType!
+  createProject(input: CreateProjectInput!): ProjectType!
+  createUser(input: CreateUserInput!): UserType!
+  deactivateAllocation(id: ID!): AllocationType!
+  deactivateProject(id: ID!): ProjectType!
+  deactivateUser(id: ID!): UserType!
+  login(email: String!, password: String!): AuthPayload!
+  logout: Boolean!
+  markAllNotificationsRead: Boolean!
+  markNotificationRead(notificationId: ID!): NotificationType!
+  reopenLoe(comment: String!, loeSheetId: ID!): LoeSheetType!
+  saveDayEntries(day: Int!, entries: [DayEntryInput!]!, month: Int!, year: Int!): LoeSheetType!
+  submitLoe(loeSheetId: ID!): LoeSheetType!
+  updateAllocation(id: ID!, input: UpdateAllocationInput!): AllocationType!
+  updateProject(id: ID!, input: UpdateProjectInput!): ProjectType!
+  updateUser(id: ID!, input: UpdateUserInput!): UserType!
+}
+
+type NotificationFeedType {
+  items: [NotificationType!]!
+  unreadCount: Int!
+}
+
+type NotificationType {
+  createdAt: DateTime!
+  id: ID!
+  isRead: Boolean!
+  link: String
+  message: String!
+  recipientId: String!
+  title: String!
+  type: String!
+}
+
+type ProjectType {
+  code: String!
+  createdAt: DateTime!
+  description: String
+  id: ID!
+  isActive: Boolean!
+  name: String!
+  updatedAt: DateTime!
+}
+
+type Query {
+  adminLoeOverview(city: String, country: String, month: Int!, overUtilized: Boolean, status: LoeStatus, year: Int!): [LoeSheetSummaryType!]!
+  allocations(userId: ID): [AllocationType!]!
+  dayEntries(day: Int!, month: Int!, year: Int!): [LoeEntryType!]!
+  exportLoeCsv(month: Int!, userId: ID!, year: Int!): String!
+  fixedCategories: [FixedCategoryType!]!
+  loeSheet(month: Int!, userId: ID, year: Int!): LoeSheetType!
+  loeSheets(status: LoeStatus, userId: ID): [LoeSheetType!]!
+  me: UserType!
+  notifications(limit: Int): NotificationFeedType!
+  pendingReviewSheets: [LoeSheetSummaryType!]!
+  projects(includeInactive: Boolean): [ProjectType!]!
+  reviewSheets: [LoeSheetSummaryType!]!
+  user(id: ID!): UserType
+  users(filter: UserFilterInput): [UserType!]!
+}
+
+type RealtimeEventType {
+  entityId: ID!
+  link: String
+  message: String
+  month: Int
+  reviewerId: ID
+  title: String
+  topic: String!
+  userId: ID
+  year: Int
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+type Subscription {
+  realtimeEvent(month: Int, reviewerId: ID, topics: [String!], userId: ID, year: Int): RealtimeEventType!
+}
+
+input UpdateAllocationInput {
+  isActive: Boolean
+  percentage: Float
+}
+
+input UpdateProjectInput {
+  code: String
+  description: String
+  isActive: Boolean
+  name: String
+}
+
+input UpdateUserInput {
+  city: String
+  country: String
+  department: Department
+  email: String
+  isActive: Boolean
+  name: String
+  password: String
+  position: String
+  reviewerId: ID
+  role: Role
+}
+
+input UserFilterInput {
+  city: String
+  country: String
+  isActive: Boolean
+  limit: Int
+  role: Role
+  search: String
+}
+
+type UserType {
+  city: String
+  country: String
+  createdAt: DateTime!
+  department: Department
+  email: String!
+  id: ID!
+  isActive: Boolean!
+  name: String!
+  position: String
+  reviewerId: String
+  role: Role!
+  updatedAt: DateTime!
+}

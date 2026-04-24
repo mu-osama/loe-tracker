@@ -1,0 +1,26 @@
+{
+  "id": "admin/flow",
+  "title": "Admin Flow",
+  "description": "This page describes the main admin lifecycle across setup, management, oversight, and review.",
+  "source": "@site/docs/admin/flow.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/flow",
+  "permalink": "/docs/admin/flow",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Admin Flow",
+    "slug": "/admin/flow"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Admin Overview",
+    "permalink": "/docs/admin/overview"
+  },
+  "next": {
+    "title": "User Management",
+    "permalink": "/docs/admin/users"
+  }
+}

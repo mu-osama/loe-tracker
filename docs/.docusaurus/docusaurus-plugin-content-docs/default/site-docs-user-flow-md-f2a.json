@@ -1,0 +1,26 @@
+{
+  "id": "user/flow",
+  "title": "User Flow",
+  "description": "This page describes the normal month lifecycle for the seeded standard user.",
+  "source": "@site/docs/user/flow.md",
+  "sourceDirName": "user",
+  "slug": "/user/flow",
+  "permalink": "/docs/user/flow",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "User Flow",
+    "slug": "/user/flow"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/docs/user/getting-started"
+  },
+  "next": {
+    "title": "Dashboard",
+    "permalink": "/docs/user/dashboard"
+  }
+}

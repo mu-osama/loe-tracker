@@ -1,0 +1,17 @@
+{
+  "name": "loe-tracker",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "docs"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace backend & npm run dev --workspace frontend",
+    "backend": "npm run dev --workspace backend",
+    "frontend": "npm run dev --workspace frontend",
+    "docs": "npm run start --workspace docs",
+    "docs:build": "npm run build --workspace docs",
+    "build": "npm run build --workspace backend && npm run build --workspace docs && npm run build --workspace frontend"
+  }
+}

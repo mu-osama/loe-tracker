@@ -1,0 +1,26 @@
+{
+  "id": "admin/users",
+  "title": "User Management",
+  "description": "What admins can do",
+  "source": "@site/docs/admin/users.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/users",
+  "permalink": "/docs/admin/users",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "User Management",
+    "slug": "/admin/users"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Admin Flow",
+    "permalink": "/docs/admin/flow"
+  },
+  "next": {
+    "title": "Project Management",
+    "permalink": "/docs/admin/projects"
+  }
+}

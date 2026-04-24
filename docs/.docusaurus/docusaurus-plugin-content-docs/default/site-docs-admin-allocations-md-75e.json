@@ -1,0 +1,26 @@
+{
+  "id": "admin/allocations",
+  "title": "Allocation Management",
+  "description": "Purpose",
+  "source": "@site/docs/admin/allocations.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/allocations",
+  "permalink": "/docs/admin/allocations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Allocation Management",
+    "slug": "/admin/allocations"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Project Management",
+    "permalink": "/docs/admin/projects"
+  },
+  "next": {
+    "title": "Review LOE",
+    "permalink": "/docs/admin/review-loe"
+  }
+}

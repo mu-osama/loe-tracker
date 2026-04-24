@@ -1,0 +1,127 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum Department {
+  ENGINEERING
+  EXPERIENCE
+}
+
+enum LoeStatus {
+  DRAFT
+  SUBMITTED
+  APPROVED
+  REOPENED
+}
+
+model User {
+  id                 String      @id @default(cuid())
+  email              String      @unique
+  password           String
+  name               String
+  role               Role        @default(USER)
+  position           String?
+  department         Department?
+  reviewerId         String?
+  reviewer           User?       @relation("ReviewerAssignments", fields: [reviewerId], references: [id])
+  reviewees          User[]      @relation("ReviewerAssignments")
+  country            String?
+  city               String?
+  isActive           Boolean     @default(true)
+  allocations        Allocation[]
+  assignedAllocations Allocation[] @relation("AllocationAssignedBy")
+  loeSheets          LoeSheet[]  @relation("SheetOwner")
+  reviewedLoeSheets  LoeSheet[]  @relation("SheetReviewer")
+  auditLogs          AuditLog[]
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+}
+
+model Project {
+  id          String       @id @default(cuid())
+  name        String
+  code        String       @unique
+  description String?
+  isActive    Boolean      @default(true)
+  allocations Allocation[]
+  loeEntries   LoeEntry[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model FixedCategory {
+  id         String     @id @default(cuid())
+  name       String
+  code       String     @unique
+  isActive   Boolean    @default(true)
+  loeEntries  LoeEntry[]
+}
+
+model Allocation {
+  id         String   @id @default(cuid())
+  userId     String
+  projectId  String
+  assignedById String?
+  user       User     @relation(fields: [userId], references: [id])
+  project    Project  @relation(fields: [projectId], references: [id])
+  assignedBy User?    @relation("AllocationAssignedBy", fields: [assignedById], references: [id])
+  percentage Decimal  @default(100) @db.Decimal(5, 2)
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+
+  @@unique([userId, projectId])
+}
+
+model LoeSheet {
+  id              String      @id @default(cuid())
+  userId          String
+  user            User        @relation("SheetOwner", fields: [userId], references: [id])
+  year            Int
+  month           Int
+  status          LoeStatus   @default(DRAFT)
+  isDelayed       Boolean     @default(false)
+  markedDelayedAt DateTime?
+  submittedAt     DateTime?
+  approvedAt      DateTime?
+  reviewerId      String?
+  reviewer        User?       @relation("SheetReviewer", fields: [reviewerId], references: [id])
+  entries         LoeEntry[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@unique([userId, year, month])
+}
+
+model LoeEntry {
+  id              String         @id @default(cuid())
+  loeSheetId      String
+  loeSheet        LoeSheet       @relation(fields: [loeSheetId], references: [id], onDelete: Cascade)
+  date            DateTime
+  projectId       String?
+  project         Project?       @relation(fields: [projectId], references: [id])
+  fixedCategoryId String?
+  fixedCategory   FixedCategory? @relation(fields: [fixedCategoryId], references: [id])
+  hours           Decimal        @db.Decimal(8, 2)
+  note            String?
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  action    String
+  entity    String
+  entityId  String
+  meta      Json?
+  createdAt DateTime @default(now())
+}

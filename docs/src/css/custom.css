@@ -1,0 +1,28 @@
+:root {
+  --ifm-color-primary: #165d46;
+  --ifm-color-primary-dark: #14533f;
+  --ifm-color-primary-darker: #124d3b;
+  --ifm-color-primary-darkest: #0f4030;
+  --ifm-color-primary-light: #18674d;
+  --ifm-color-primary-lighter: #1b7053;
+  --ifm-color-primary-lightest: #228264;
+  --ifm-background-color: #f7f6f2;
+  --ifm-code-font-size: 0.92rem;
+  --ifm-font-family-base: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --ifm-heading-font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #7fd7b5;
+  --ifm-background-color: #0f1714;
+}
+
+.hero--primary {
+  background:
+    radial-gradient(circle at top left, rgba(34, 130, 100, 0.2), transparent 36%),
+    linear-gradient(135deg, #123127, #1e4f3d 52%, #2b6f57);
+}
+
+.theme-doc-markdown header + p {
+  font-size: 1.05rem;
+}

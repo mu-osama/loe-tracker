@@ -1,0 +1,26 @@
+{
+  "id": "developer/setup",
+  "title": "Local Setup",
+  "description": "Prerequisites",
+  "source": "@site/docs/developer/setup.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/setup",
+  "permalink": "/docs/developer/setup",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Local Setup",
+    "slug": "/developer/setup"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Project Overview",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "Architecture",
+    "permalink": "/docs/developer/architecture"
+  }
+}

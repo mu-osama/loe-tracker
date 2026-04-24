@@ -1,0 +1,26 @@
+{
+  "id": "user/dashboard",
+  "title": "Dashboard",
+  "description": "The dashboard is your month summary view.",
+  "source": "@site/docs/user/dashboard.md",
+  "sourceDirName": "user",
+  "slug": "/user/dashboard",
+  "permalink": "/docs/user/dashboard",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Dashboard",
+    "slug": "/user/dashboard"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "User Flow",
+    "permalink": "/docs/user/flow"
+  },
+  "next": {
+    "title": "Daily Entry",
+    "permalink": "/docs/user/daily-entry"
+  }
+}

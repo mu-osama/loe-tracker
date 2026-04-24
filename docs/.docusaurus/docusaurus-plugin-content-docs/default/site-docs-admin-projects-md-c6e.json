@@ -1,0 +1,26 @@
+{
+  "id": "admin/projects",
+  "title": "Project Management",
+  "description": "What admins can do",
+  "source": "@site/docs/admin/projects.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/projects",
+  "permalink": "/docs/admin/projects",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Project Management",
+    "slug": "/admin/projects"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "User Management",
+    "permalink": "/docs/admin/users"
+  },
+  "next": {
+    "title": "Allocation Management",
+    "permalink": "/docs/admin/allocations"
+  }
+}

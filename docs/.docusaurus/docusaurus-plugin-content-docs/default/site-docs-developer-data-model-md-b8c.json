@@ -1,0 +1,26 @@
+{
+  "id": "developer/data-model",
+  "title": "Data Model",
+  "description": "Core enums",
+  "source": "@site/docs/developer/data-model.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/data-model",
+  "permalink": "/docs/developer/data-model",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Data Model",
+    "slug": "/developer/data-model"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Architecture",
+    "permalink": "/docs/developer/architecture"
+  },
+  "next": {
+    "title": "Frontend Notes",
+    "permalink": "/docs/developer/frontend"
+  }
+}

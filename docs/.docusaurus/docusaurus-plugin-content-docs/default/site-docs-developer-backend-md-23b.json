@@ -1,0 +1,26 @@
+{
+  "id": "developer/backend",
+  "title": "Backend Notes",
+  "description": "Stack",
+  "source": "@site/docs/developer/backend.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/backend",
+  "permalink": "/docs/developer/backend",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Backend Notes",
+    "slug": "/developer/backend"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Frontend Notes",
+    "permalink": "/docs/developer/frontend"
+  },
+  "next": {
+    "title": "Operations and Maintenance",
+    "permalink": "/docs/developer/operations"
+  }
+}

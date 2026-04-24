@@ -1,0 +1,23 @@
+{
+  "id": "intro",
+  "title": "Project Overview",
+  "description": "PixelEDGE is a full-stack Level of Effort tracking application for a single organization. It combines a Next.js frontend, a NestJS GraphQL backend, and a PostgreSQL database to manage monthly effort sheets, review actions, allocations, and administrative oversight.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/docs/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "intro",
+    "title": "Project Overview",
+    "slug": "/"
+  },
+  "sidebar": "docsSidebar",
+  "next": {
+    "title": "Local Setup",
+    "permalink": "/docs/developer/setup"
+  }
+}

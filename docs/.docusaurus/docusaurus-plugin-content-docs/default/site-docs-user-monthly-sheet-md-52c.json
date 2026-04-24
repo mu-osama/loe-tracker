@@ -1,0 +1,26 @@
+{
+  "id": "user/monthly-sheet",
+  "title": "Monthly Sheet",
+  "description": "The monthly sheet is the core workspace for the user.",
+  "source": "@site/docs/user/monthly-sheet.md",
+  "sourceDirName": "user",
+  "slug": "/user/monthly-sheet",
+  "permalink": "/docs/user/monthly-sheet",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Monthly Sheet",
+    "slug": "/user/monthly-sheet"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Daily Entry",
+    "permalink": "/docs/user/daily-entry"
+  },
+  "next": {
+    "title": "Admin Overview",
+    "permalink": "/docs/admin/overview"
+  }
+}

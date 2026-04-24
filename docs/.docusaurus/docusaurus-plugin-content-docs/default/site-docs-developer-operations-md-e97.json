@@ -1,0 +1,26 @@
+{
+  "id": "developer/operations",
+  "title": "Operations and Maintenance",
+  "description": "Common commands",
+  "source": "@site/docs/developer/operations.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/operations",
+  "permalink": "/docs/developer/operations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Operations and Maintenance",
+    "slug": "/developer/operations"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Backend Notes",
+    "permalink": "/docs/developer/backend"
+  },
+  "next": {
+    "title": "Getting Started",
+    "permalink": "/docs/user/getting-started"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "admin/overview",
+  "title": "Admin Overview",
+  "description": "The admin overview page summarizes LOE status across the organization.",
+  "source": "@site/docs/admin/overview.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/overview",
+  "permalink": "/docs/admin/overview",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Admin Overview",
+    "slug": "/admin/overview"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Monthly Sheet",
+    "permalink": "/docs/user/monthly-sheet"
+  },
+  "next": {
+    "title": "Admin Flow",
+    "permalink": "/docs/admin/flow"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "developer/frontend",
+  "title": "Frontend Notes",
+  "description": "Stack",
+  "source": "@site/docs/developer/frontend.md",
+  "sourceDirName": "developer",
+  "slug": "/developer/frontend",
+  "permalink": "/docs/developer/frontend",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Frontend Notes",
+    "slug": "/developer/frontend"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Data Model",
+    "permalink": "/docs/developer/data-model"
+  },
+  "next": {
+    "title": "Backend Notes",
+    "permalink": "/docs/developer/backend"
+  }
+}

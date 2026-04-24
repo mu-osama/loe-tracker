@@ -1,0 +1,22 @@
+{
+  "id": "admin/review-loe",
+  "title": "Review LOE",
+  "description": "The review pages are where the assigned reviewer processes submitted monthly sheets.",
+  "source": "@site/docs/admin/review-loe.md",
+  "sourceDirName": "admin",
+  "slug": "/admin/review-loe",
+  "permalink": "/docs/admin/review-loe",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Review LOE",
+    "slug": "/admin/review-loe"
+  },
+  "sidebar": "docsSidebar",
+  "previous": {
+    "title": "Allocation Management",
+    "permalink": "/docs/admin/allocations"
+  }
+}

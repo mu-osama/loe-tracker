@@ -1,0 +1,118 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs/",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "admin/allocations",
+              "path": "/docs/admin/allocations",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "admin/flow",
+              "path": "/docs/admin/flow",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "admin/overview",
+              "path": "/docs/admin/overview",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "admin/projects",
+              "path": "/docs/admin/projects",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "admin/review-loe",
+              "path": "/docs/admin/review-loe",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "admin/users",
+              "path": "/docs/admin/users",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "developer/architecture",
+              "path": "/docs/developer/architecture",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "developer/backend",
+              "path": "/docs/developer/backend",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "developer/data-model",
+              "path": "/docs/developer/data-model",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "developer/frontend",
+              "path": "/docs/developer/frontend",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "developer/operations",
+              "path": "/docs/developer/operations",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "developer/setup",
+              "path": "/docs/developer/setup",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "user/daily-entry",
+              "path": "/docs/user/daily-entry",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "user/dashboard",
+              "path": "/docs/user/dashboard",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "user/flow",
+              "path": "/docs/user/flow",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "user/getting-started",
+              "path": "/docs/user/getting-started",
+              "sidebar": "docsSidebar"
+            },
+            {
+              "id": "user/monthly-sheet",
+              "path": "/docs/user/monthly-sheet",
+              "sidebar": "docsSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "docsSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
