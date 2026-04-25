@@ -41,7 +41,16 @@ function parseCookieHeader(header?: string) {
         driver: ApolloDriver,
         autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
         sortSchema: true,
-        cors: true,
+        cors: {
+          origin: [
+            process.env.FRONTEND_URL || "http://localhost:3000",
+            "https://loe-tracker-frontend.vercel.app",
+            "http://localhost:3000",
+          ],
+          credentials: true,
+          methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+          allowedHeaders: ["Content-Type", "Authorization"],
+        },
         subscriptions: {
           'graphql-ws': true,
         },
@@ -52,7 +61,7 @@ function parseCookieHeader(header?: string) {
           }
           return { req: request, res };
         },
-      } as ApolloDriverConfig & { cors: boolean },
+      } as ApolloDriverConfig,
     ),
     PrismaModule,
     AuthModule,
