@@ -5,7 +5,7 @@ RUN apt-get update -y && apt-get install -y openssl curl
 
 WORKDIR /app
 
-# Copy the ENTIRE repo so workspace and all source files are available
+# Copy the ENTIRE repo
 COPY . .
 
 # Install all dependencies from root (handles npm workspaces)
@@ -14,14 +14,14 @@ RUN npm install --legacy-peer-deps
 # Generate Prisma client
 RUN cd backend && npx prisma generate
 
-# Build using tsc directly with explicit output
-RUN cd backend && npx tsc --project tsconfig.json --outDir dist --noEmit false
+# Build using tsc directly
+RUN cd backend && npx tsc --project tsconfig.json --noEmit false
 
-# Confirm dist was built
-RUN ls -la /app/backend/dist/ && echo "✅ Build successful"
+# Show exact location of main.js
+RUN find /app/backend/dist -name "main.js"
 
 WORKDIR /app/backend
 
 EXPOSE 3001
 
-CMD ["node", "dist/main.js"]
+CMD ["node", "dist/src/main.js"]
