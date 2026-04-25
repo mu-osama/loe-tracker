@@ -1,26 +1,27 @@
 FROM node:20-slim
 
+# Install OpenSSL for Prisma
 RUN apt-get update -y && apt-get install -y openssl curl
 
 WORKDIR /app
 
-COPY package*.json ./
-COPY backend/package*.json ./backend/
+# Copy the ENTIRE repo so workspace and all source files are available
+COPY . .
 
-RUN npm install
+# Install all dependencies from root (handles npm workspaces)
+RUN npm install --legacy-peer-deps
 
-COPY backend/ ./backend/
-
+# Generate Prisma client
 RUN cd backend && npx prisma generate
 
-RUN cd backend && ./node_modules/.bin/tsc -p tsconfig.json --noEmit false
+# Build using tsc directly with explicit output
+RUN cd backend && npx tsc --project tsconfig.json --outDir dist --noEmit false
 
-RUN ls -la /app/backend/dist/
+# Confirm dist was built
+RUN ls -la /app/backend/dist/ && echo "✅ Build successful"
 
 WORKDIR /app/backend
 
 EXPOSE 3001
-
-
 
 CMD ["node", "dist/main.js"]
