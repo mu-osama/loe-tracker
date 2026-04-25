@@ -1,10 +1,25 @@
-FROM node:20-bookworm-slim
+FROM node:20-alpine
 
 WORKDIR /app
-COPY package.json ./
+
+# Copy root package files (needed for npm workspaces)
+COPY package*.json ./
+COPY backend/package*.json ./backend/
+
+# Install all dependencies
 RUN npm install
-COPY . .
-RUN npx prisma generate && npm run build
+
+# Copy backend source
+COPY backend/ ./backend/
+
+# Generate Prisma client
+RUN cd backend && npx prisma generate
+
+# Build NestJS
+RUN cd backend && npm run build
+
+WORKDIR /app/backend
 
 EXPOSE 3001
-CMD ["npm", "run", "start"]
+
+CMD ["node", "dist/main.js"]
