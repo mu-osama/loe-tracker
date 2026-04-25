@@ -18,7 +18,10 @@ async function bootstrap() {
     optionsSuccessStatus: 204,
   });
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
-  await app.listen(Number(process.env.BACKEND_PORT || 3001));
+  await app.listen(
+    Number(process.env.PORT || process.env.BACKEND_PORT || 3001),
+    "0.0.0.0",
+  );
 }
 
 bootstrap();
