@@ -13,7 +13,7 @@ COPY backend/ ./backend/
 
 RUN cd backend && npx prisma generate
 
-RUN cd backend && ./node_modules/.bin/nest build
+RUN cd backend && ./node_modules/.bin/tsc -p tsconfig.json --noEmit false
 
 RUN ls -la /app/backend/dist/
 
