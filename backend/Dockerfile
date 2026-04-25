@@ -19,7 +19,10 @@ COPY backend/ ./backend/
 RUN cd backend && npx prisma generate
 
 # Build NestJS
-RUN cd backend && npm run build
+RUN cd backend && npx nest build
+
+# Verify dist was created
+RUN ls -la /app/backend/dist/
 
 WORKDIR /app/backend
 
