@@ -41,7 +41,7 @@ function parseCookieHeader(header?: string) {
         driver: ApolloDriver,
         autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
         sortSchema: true,
-        cors: false,
+        cors: true,
         subscriptions: {
           'graphql-ws': true,
         },
